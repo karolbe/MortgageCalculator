@@ -9,9 +9,9 @@ class Mortgage() {
 
     constructor(filesSet: Array<String>) : this() {
 
-        for (file in filesSet) {
-            val csvReader = CSVReader(file, "CHF");
-            allRecords.put(file, csvReader.rates);
+        filesSet.forEach {
+            val csvReader = CSVReader(it, "CHF");
+            allRecords.put(it, csvReader.rates);
         }
     }
 
@@ -65,7 +65,7 @@ fun main(args: Array<String>) {
     println("-------")
 
     val quotationIndex = 1;
-    println("Calculations for a single purchase on ${quotationIndex}th quotationIndex of a month");
+    println("Calculations for a single purchase on ${quotationIndex}th quotation index of a month");
     mortgage.calculateSinglePurchase(installment, quotationIndex);
 }
 

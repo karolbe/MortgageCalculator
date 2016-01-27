@@ -5,15 +5,10 @@ package com.metasys.chf
  */
 
 class MonthRecords() {
-    var groupEntries = arrayOf<ExchangeRate>();
+    var groupEntries = listOf<ExchangeRate>();
 
     constructor(allRates: Array<ExchangeRate>, groupId: Int) : this() {
-
-        for (rate in allRates) {
-            if (rate.month == groupId) {
-                groupEntries += rate;
-            }
-        }
+        groupEntries = allRates.filter { it.month == groupId};
     }
 
     public fun getNthExchangeRate(n: Int, total: Int): ExchangeRate {

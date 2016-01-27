@@ -18,6 +18,7 @@ class CSVReader() {
         val lines = file.readLines();
 
         var currencyIndex = 0;
+
         for (field in lines[0].split(";")) {
             if (field.contains(currencyName)) {
                 break;
