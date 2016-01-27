@@ -58,13 +58,13 @@ fun main(args: Array<String>) {
 
     val mortgage = Mortgage(args);
     val installment: Double = 400.0;
-    val numberOfInstallments = 5;
+    val numberOfInstallments = 10;
     println("Calculations for incremental purchases, # of installments: $numberOfInstallments");
     mortgage.calculateIncrementalPurchases(installment, numberOfInstallments);
 
     println("-------")
 
-    val quotationIndex = 1;
+    val quotationIndex = 2;
     println("Calculations for a single purchase on ${quotationIndex}th quotation index of a month");
     mortgage.calculateSinglePurchase(installment, quotationIndex);
 }
